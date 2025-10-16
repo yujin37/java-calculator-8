@@ -12,6 +12,7 @@ public class NumericStringInputProcessor {
     }
     public static void processNumericString() {
         String inputString = readInputString();
-        printResult(inputString);
+        String outputString = NumericStringValidator.processValidator(inputString);
+        printResult(outputString);
     }
 }
