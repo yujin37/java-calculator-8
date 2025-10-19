@@ -42,7 +42,7 @@ public class NumericStringValidatorTest extends NsTest {
     @Test
     void 예외_테스트_커스텀_특정숫자() {
         assertSimpleTest(() ->
-                assertThatThrownBy(() -> runException("//3\n1332"))
+                assertThatThrownBy(() -> runException("//3\\n1332"))
                         .isInstanceOf(IllegalArgumentException.class)
         );
     }
