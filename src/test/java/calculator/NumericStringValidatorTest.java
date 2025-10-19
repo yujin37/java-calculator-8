@@ -12,18 +12,18 @@ public class NumericStringValidatorTest extends NsTest {
     @Test
     void 커스텀_구분자_사용_알파벳() {
         String customAlpha = "//o\\n1";
-        assertThat(NumericStringValidator.digitsAndSpecial(customAlpha, 'o')).isEqualTo(Arrays.asList(1));
+        assertThat(NumericStringValidator.digitsAndSpecial(customAlpha)).isEqualTo(Arrays.asList(1));
     }
     @Test
     void 커스텀_구분자_사용_숫자() {
         String customAlpha = "//3\\n1";
-        assertThat(NumericStringValidator.digitsAndSpecial(customAlpha, 'o')).isEqualTo(Arrays.asList(1));
+        assertThat(NumericStringValidator.digitsAndSpecial(customAlpha)).isEqualTo(Arrays.asList(1));
     }
 
     @Test
     void 커스텀_구분자_사용_공백() {
         String customAlpha = "// \\n1";
-        assertThat(NumericStringValidator.digitsAndSpecial(customAlpha, ' ')).isEqualTo(Arrays.asList(1));
+        assertThat(NumericStringValidator.digitsAndSpecial(customAlpha)).isEqualTo(Arrays.asList(1));
     }
     @Test
     void 예외_테스트_커스텀_소수점() {
