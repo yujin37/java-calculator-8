@@ -7,12 +7,12 @@ public class NumericStringInputProcessor {
         System.out.println("덧셈할 문자열을 입력해 주세요.");
         return Console.readLine();
     }
-    public static void printResult(String outputValue) {
-        System.out.println(outputValue);
+    public static void printResult(Integer outputValue) {
+        System.out.println("결과 : " + outputValue);
     }
     public static void processNumericString() {
         String inputString = readInputString();
-        String outputString = NumericStringValidator.processValidator(inputString);
-        printResult(outputString);
+        Integer outputInt = NumericStringValidator.processValidator(inputString);
+        printResult(outputInt);
     }
 }
