@@ -30,6 +30,27 @@ public class NumericStringValidatorTest extends NsTest {
                         .isInstanceOf(IllegalArgumentException.class)
         );
     }
+    @Test
+    void 특수_구분자_일부_오타(){
+        assertSimpleTest(() ->
+                assertThatThrownBy(() -> runException("//;\\1;2,3"))
+                        .isInstanceOf(IllegalArgumentException.class)
+        );
+    }
+    @Test
+    void 특수_구분자로_지정안된_문자(){
+        assertSimpleTest(() ->
+                assertThatThrownBy(() -> runException("1,2;3"))
+                        .isInstanceOf(IllegalArgumentException.class)
+        );
+    }
+    @Test
+    void 구분자가_여러개_동시에_나열(){
+        assertSimpleTest(() ->
+                assertThatThrownBy(() -> runException("1:,2"))
+                        .isInstanceOf(IllegalArgumentException.class)
+        );
+    }
     @Override
     public void runMain() {
         Application.main(new String[]{});
