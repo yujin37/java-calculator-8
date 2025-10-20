@@ -1,6 +1,8 @@
 package calculator;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import calculator.model.NumericStringPlus;
 import camp.nextstep.edu.missionutils.test.NsTest;
 import java.util.Arrays;
 import org.junit.jupiter.api.Test;
