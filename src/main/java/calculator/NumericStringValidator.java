@@ -6,13 +6,13 @@ import java.util.regex.Pattern;
 
 public class NumericStringValidator {
     //표준 구분자와 숫자로만 이루어져있는지 확인
-    public static List<Integer> digitsAndStandard(String values){
+    private static List<Integer> digitsAndStandard(String values){
         String[] digits;
         digits = values.split("[:,]");
 
         return parseDigits(digits);
     }
-    public static List<Integer> digitsAndSpecial(String values){
+    private static List<Integer> digitsAndSpecial(String values){
         String[] digits;
         char specialTag = values.charAt(2);
         String tag = "[:," + Pattern.quote(String.valueOf(specialTag)) + "]";
@@ -22,7 +22,7 @@ public class NumericStringValidator {
         return parseDigits(digits);
     }
 
-    public static List<Integer> parseDigits(String[] stringDigits){
+    private static List<Integer> parseDigits(String[] stringDigits){
         List<Integer> intDigits = new ArrayList<>();
         for(int i = 0; i< stringDigits.length; i++){
             int num = Integer.parseInt(stringDigits[i]);
